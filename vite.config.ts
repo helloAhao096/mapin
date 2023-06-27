@@ -11,7 +11,8 @@ if (process.env.NODE_ENV === 'production') {
 
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+    }),
     AutoImport({
       imports: [
         'vue',
