@@ -13,6 +13,7 @@ const unfold = ref(true)
 
 let arrow_left = 'arrow__down-left'
 let arrow_right = 'arrow__down-right'
+// TODO click 三次 三个挡位 全屏 一半 只有搜索框
 
 onMounted(() => {
   console.log(unfold.value)
@@ -20,7 +21,9 @@ onMounted(() => {
     unfold.value = !unfold.value
     arrow_left = unfold.value ? 'arrow__down-left': 'arrow__up-left'
     arrow_right = unfold.value ? 'arrow__down-right': 'arrow__up-right'
+    // 折叠的尺寸
     if (unfold.value) {
+      // card.value.style.top = (window.screen.availHeight / 2) + 'px'
       card.value.style.top = '25px'
     }else {
       card.value.style.top = window.innerHeight - main.value.main.offsetTop + 'px'
@@ -71,10 +74,12 @@ const debounce = (func, dalay = 100, immediate = true) => {
 
 <template>
   <aside ref="card" class="card">
+
     <div ref="arrow_box" class="card__arrow-box text-center mb-1">
       <div class="arrow arrow__line-left"></div>
       <div class="arrow arrow__line-right"></div>
     </div>
+
     <card-header ref="header"></card-header>
     <card-main ref="main"></card-main>
   </aside>
@@ -96,7 +101,7 @@ const debounce = (func, dalay = 100, immediate = true) => {
 .arrow {
   position: relative;
   width: 1rem;
-  height: 2px;
+  height: 2.5px;
   background-color: black;
   transition: all .1s ease-in-out;
 
