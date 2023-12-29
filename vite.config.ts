@@ -12,6 +12,8 @@ if (process.env.NODE_ENV === 'production') {
 export default defineConfig({
   plugins: [
     vue({
+      // 响应式ref 语法糖 $ref 已经被废弃
+      // reactivityTransform: true
     }),
     AutoImport({
       imports: [

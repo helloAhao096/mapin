@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CardHeader from "@/components/actionCard/header/cardHeader.vue";
+
 const main = ref()
 
 defineExpose({
@@ -9,6 +11,8 @@ defineExpose({
 <template>
 
   <main ref="main" class="card__main">
+    <card-header></card-header>
+
     <slot>
 
     </slot>
