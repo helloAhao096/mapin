@@ -9,24 +9,17 @@ defineExpose({
 <template>
 
   <main ref="main" class="card__main">
-    <section class="card__section">
+    <slot>
 
-    </section>
-    <section class="card__section">
-
-    </section>
-
-    <section class="card__section">
-
-    </section>
-
-    <section class="card__section">
-
-    </section>
+    </slot>
   </main>
 
 </template>
 
+<!--
+ 设置最大高度，超出的可以滚动
+ 判断如果卡片如果没有全部展开，元素不能滚动
+ -->
 <style scoped lang="postcss">
 .card__main {
   overflow: hidden;
@@ -37,14 +30,4 @@ defineExpose({
   /*apply*/
 }
 
-.card__section {
-  @apply
-  rounded-xl
-  w-full min-h-[150px]
-  bg-buff-second
-}
-
-.card__section:not(:last-child) {
-  @apply mb-[20px]
-}
 </style>

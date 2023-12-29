@@ -18,23 +18,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 .card__header {
   @apply mb-[20px]
-}
-
-.card__header--input {
-  &:focus {
-    @apply
-    bg-white
-  }
-  @apply
-  w-80 h-10
-  rounded-xl
-  bg-buff-tint
-  p-4
-
-
 }
 
 </style>
